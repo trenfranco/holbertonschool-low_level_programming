@@ -11,7 +11,7 @@ char nashe;
 for (nashe = 'a' ; nashe <= 'z' ; nashe++)
 {
 putchar(nashe);
-putchar('\n');
 }
+putchar('\n');
 return (0);
 }
