@@ -8,9 +8,10 @@
 int main(void)
 {
 char nashe;
-for (nashe = 'A' ; nashe <= 'Z' ; nashe++)
+for (nashe = 'a' ; nashe <= 'z' ; nashe++)
 {
 putchar(nashe);
+putchar('\n');
 }
 return (0);
 }
