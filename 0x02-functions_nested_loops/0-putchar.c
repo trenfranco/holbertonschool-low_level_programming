@@ -1,6 +1,8 @@
 #include "main.h"
 /**
- * main  entro point
+ * main -  entro point
+ *
+ * Return: always 0
  *
  */
 int main(void)
