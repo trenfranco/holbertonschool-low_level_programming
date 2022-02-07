@@ -18,7 +18,7 @@ for (x = 0 ; x <= 59 ; x++)
 if (i < 10)
 {
 _putchar ('0');
-} 
+}
 else
 {
 _putchar (i / 10 + '0');
