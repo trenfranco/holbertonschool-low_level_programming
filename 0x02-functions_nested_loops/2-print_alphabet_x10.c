@@ -10,6 +10,7 @@ void print_alphabet_x10(void)
 	int i;
 	int x;
 	char ch[] = "abcdefghijklmnopqrstuvwxyz";
+
 	for (x = 0 ; x <= 10 ; x++)
 	{
 	for (i = 0 ; i <= 25 ; i++)
