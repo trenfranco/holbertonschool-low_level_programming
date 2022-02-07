@@ -2,6 +2,8 @@
 
 /**
  * add - Entry point
+ * @a:int
+ * @b:int
  *
  * Return: Always 0 (Success)
  */
