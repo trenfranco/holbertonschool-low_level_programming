@@ -8,13 +8,23 @@ void print_times_table(int n)
 int i;
 int x;
 int s;
-if (n < 1)
-n = -n;
+if (0 < n)
+{
 for (i = 0; i <= n; i++)
 {
 for (x = 0; x <= n; x++)
 {
 s = i * x;
+if (s > 999)
+{
+_putchar(s / 10 + '0');
+s = s / 10;
+}
+if (s > 99)
+{
+_putchar(s / 10 + '0');
+s = s / 10;
+}
 if (s > 9)
 _putchar(s / 10 + '0');
 _putchar(s % 10 + '0');
@@ -27,5 +37,6 @@ _putchar(' ');
 }
 }
 _putchar('\n');
+}
 }
 }
