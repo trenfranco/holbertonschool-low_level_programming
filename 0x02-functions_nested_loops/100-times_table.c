@@ -19,11 +19,11 @@ if (s > 999)
 {
 _putchar(s / 1000 + '0');
 }
-if (s > 99)
+else if (s > 99)
 {
 _putchar(s / 100 + '0');
 }
-if (s > 9)
+else if (s > 9)
 _putchar(s / 10 + '0');
 _putchar(s % 10 + '0');
 if (x != n)
