@@ -2,7 +2,7 @@
 
 /**
  * print_diagonal - check the code
- *
+ * @n: int
  * Return: Always 0.
  */
 void print_diagonal(int n)
@@ -21,8 +21,7 @@ for (b = a ; b > 0 ; b--)
 _putchar (' ');
 }
 _putchar('\\');
-_putchar('\n');	
+_putchar('\n');
 }
-	
 }
 
