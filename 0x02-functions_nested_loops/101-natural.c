@@ -34,6 +34,6 @@ c = b + a;
 printf("%i", c);
 printf("\n");
 
-
+return (0);
 
 }
