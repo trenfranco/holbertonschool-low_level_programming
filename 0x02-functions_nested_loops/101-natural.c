@@ -2,38 +2,27 @@
 
 /**
  * main - Entry point
- * @i: number
- * @a: num
- * @b: num
- * @c: int
+ *
+ *
+ *
+ *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
 int i;
-int a = 0;
-int b = 0;
-int c = 0;
+int sum;
 
-for (i = 1024 ; i > 0 ; i--)
+for (i = 0 ; i < 1024 ; i++)
 	{
-	if (i % 3 != 1 && i != 1024)
-	{
-	a = a + i;
-	}
+	if (i % 3 == 0 || i % 5 == 0)
+		{
+		sum += i;
+		}
 	}
 
-for (i = 1024 ; i > 0 ; i--)
-	{
-	if (i % 5 != 1 && i != 1024)
-	{
-	b = b + i;
-	}
-	}
-c = b + a;
-printf("%i", c);
+printf("%i", sum);
 printf("\n");
 
 return (0);
-
 }
