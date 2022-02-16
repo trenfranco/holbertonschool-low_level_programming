@@ -12,7 +12,7 @@ int b = 0;
 char j[11] = {"aAeEoOtTlL"};
 char n[11] = {"4433007711"};
 
-while(a[i] != '\0')
+while (a[i] != '\0')
 	{
 	for (b = 0 ; b < 11 ; b++)
 		{
@@ -23,6 +23,6 @@ while(a[i] != '\0')
 		}
 	i++;
 	}
-return(a);
+return (a);
 
 }
