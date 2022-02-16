@@ -9,38 +9,16 @@ int _strlen(char *s);
  */
 int _strcmp(char *s1, char *s2)
 {
+int i = 0;
+int a = 0;
 
-if (_strlen(s1) < _strlen(s2))
+while (s1[i] == s2[i])
 	{
-	return (_strlen(s1) - _strlen(s2));
+	if (s1[i] == '\0')
+		return (0);
+	i++;
 	}
-else if (_strlen(s1) > _strlen(s2))
-	{
-	return (_strlen(s2) + _strlen(s1));
-	}
-else
-{
-return (0);
-}
+a = (s1[i] - s2[i]);
+return (a);
 
-
-}
-
-/**
- * _strlen - retorna el largo
- * @s: char
- * Return: largo
- */
-int _strlen(char *s)
-{
-int cont = 0;
-char l = '0';
-if (*s == '\0')
-return (0);
-while (l != '\0')
-{
-cont++;
-l = *(s + cont);
-}
-return (cont);
 }
