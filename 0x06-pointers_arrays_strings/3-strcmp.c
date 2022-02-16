@@ -12,11 +12,11 @@ int _strcmp(char *s1, char *s2)
 
 if (_strlen(s1) < _strlen(s2))
 	{
-	return (_strlen(s1 - _strlen(s2);
+	return (_strlen(s1) - _strlen(s2));
 	}
 else if (_strlen(s1) > _strlen(s2))
 	{
-	return (_strlen(s2) - _strlen(s1);
+	return (_strlen(s2) + _strlen(s1));
 	}
 else
 {
