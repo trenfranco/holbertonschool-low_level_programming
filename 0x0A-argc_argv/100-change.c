@@ -23,21 +23,18 @@ return (0);
 }
 
 for (i = 1; i < argc; i++)
-        {
-
-        size = strlen(argv[i]);
-        for (x = 0; x < size ; x++)
-                {
-                if (isdigit(argv[i][x]) == 0)
-                {
-                printf("Error\n");
-                return (1);
-                }
-
-                }
-        res += atoi(argv[i]);
-
-        }
+{
+size = strlen(argv[i]);
+for (x = 0; x < size ; x++)
+{
+if (isdigit(argv[i][x]) == 0)
+{
+printf("Error\n");
+return (1);
+}
+}
+res += atoi(argv[i]);
+}
 printf("%d\n", res);
 return (0);
 
