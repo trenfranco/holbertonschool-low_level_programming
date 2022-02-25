@@ -5,7 +5,7 @@
  * main - main
  *@argc: array agrv size
  *@argv: array
- *
+ *Return: int
  */
 
 int main(int argc, char *argv[])
@@ -17,12 +17,12 @@ for (i = 0; i < argc; i++)
 if (i < 3)
 {
 printf("Error\n");
-return(1);
+return (1);
 }
 
 x = atoi(argv[1]);
 y = atoi(argv[2]);
-res = x * y;
+res = x *y;
 printf("%d\n", res);
-return(0);
+return (0);
 }
