@@ -21,7 +21,7 @@ return (NULL);
 p = malloc(height * sizeof(int *));
 if (p == NULL)
 	{
-	free(p);
+	free(*p);
 	return (NULL);
 	}
 i = 0;
@@ -39,5 +39,6 @@ for (i = 0; i < height; i++)
 		p[i][j] = 0;
 		}
 	}
+
 return (p);
 }
