@@ -20,7 +20,10 @@ return (NULL);
 
 p = malloc(height * sizeof(int *));
 if (p == NULL)
-	        return (NULL);
+	{
+	free(p);
+	return (NULL);
+	}
 i = 0;
 for (i = 0; i < height; i++)
 	{
