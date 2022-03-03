@@ -10,50 +10,44 @@
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, sum, k ,l;
-	char *p;
+unsigned int i, j, sum, k, l;
+char *p;
 
-	i = 0;
-	j = 0;
-	k = 0;
-
-	if (s1 == NULL)
-                s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-
-	while (s1[i] != '\0')
-		i++;
-
-	while (s2[j] != '\0')
-		j++;
-
-	if (n >= j)
-		{
-		sum = j + i;
-		}
-	else if (n < j)
-	{
-	sum = n + i;
-	}
-
-	p = malloc((sum + 1) * sizeof(char));
-
-	if (p == NULL)
-		return (NULL);
-	l = 0;
-	for (k = 0; k < i; k++)
-		{
-		p[l] = s1[k];
-		l++;
-		}
-	i = 0;
-	for (k = l; k < sum; k++)
-		{
-		p[l] = s2[i];
-		l++;
-		i++;
-		}
+i = 0;
+j = 0;
+k = 0;
+if (s1 == NULL)
+s1 = "";
+if (s2 == NULL)
+s2 = "";
+while (s1[i] != '\0')
+i++;
+while (s2[j] != '\0')
+j++;
+if (n >= j)
+{
+sum = j + i;
+}
+else if (n < j)
+{
+sum = n + i;
+}
+p = malloc((sum + 1) * sizeof(char));
+if (p == NULL)
+return (NULL);
+l = 0;
+for (k = 0; k < i; k++)
+{
+p[l] = s1[k];
+l++;
+}
+i = 0;
+for (k = l; k < sum; k++)
+{
+p[l] = s2[i];
+l++;
+i++;
+}
 p[l] = '\0';
 return (p);
 }
