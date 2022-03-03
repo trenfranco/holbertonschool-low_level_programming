@@ -20,7 +20,7 @@ int *array_range(int min, int max)
 	j = 0;
 	for (i = min; i <= max; i++)
 	{
-		arr[i] = min + j;
+		arr[j] = i;
 		j++;
 	}
 return (arr);
