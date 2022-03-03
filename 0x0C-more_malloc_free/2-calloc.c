@@ -23,7 +23,7 @@ mul = nmemb * size;
 for (i = 0; i < mul; i++)
 	{
 	c[i] = 0;
-	
+
 	}
 return (c);
 
