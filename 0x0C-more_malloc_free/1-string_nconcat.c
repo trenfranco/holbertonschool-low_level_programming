@@ -47,6 +47,15 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		p[l] = s1[k];
 		l++;
 		}
+	if (n >= j)
+		{
+		for (k = 0; k < j; k++)
+			{
+			p[l] = s2[k];
+			l++;
+			}
+		}
+
 	for (k = 0; k < n; k++)
 		{
 		p[l] = s2[k];
