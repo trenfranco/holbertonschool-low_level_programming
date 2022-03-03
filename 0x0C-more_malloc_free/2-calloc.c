@@ -14,13 +14,16 @@ char *c;
 
 if (nmemb == 0 || size == 0)
 	return (NULL);
+
 c = malloc(nmemb * size * sizeof(char));
 if (c == NULL)
 	return (NULL);
+
 for (i = 0; i < nmemb; i++)
 	{
-		c[i] = 0;
-
+	i *= size;
+	c[i] = 0;
+	
 	}
 return (c);
 
