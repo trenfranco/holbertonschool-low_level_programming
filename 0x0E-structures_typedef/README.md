@@ -1,1 +1,1 @@
-Structures and typedef exercises
+Structures and typedef exercises.
