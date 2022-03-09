@@ -17,14 +17,14 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (((argv[2][1] != '\0') && (argv[2][0] != '+' ||
-		argv[2][0] != '-' || argv[2][0] != '*' ||
-		argv[2][0] != '/' || argv[2][0] != '%')) || argv[2][0] == '\\')
+	
+	if ((argv[2][0] != 37 && argv[2][0] != 47 && argv[2][0] != 43 &&
+	argv[2][0] != 45 && argv[2][0] != 42) || argv[2][1] != '\0')
 	{
-
-		printf("Error\n");
-		exit(99);
+	printf("Error\n");
+	exit(99);
 	}
+		
 	if ((argv[2][0] == '/' || argv[2][0] == '%') && atoi(argv[3]) == 0)
 	{
 	printf("Error\n");
