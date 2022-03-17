@@ -4,7 +4,7 @@
 char *_strdup(const char *str);
 int _strlen(const char *s);
 /**
- * add_node -  adds node at the begging
+ * add_node_end -  adds node at the end
  * @head: head
  * @str: string
  * Return: &new node
