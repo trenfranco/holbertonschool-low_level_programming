@@ -20,9 +20,9 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 	{
 	find = find->next;
 	}
-	if (find->next == NULL)
+	if (find == NULL)
 		return (NULL);
-	return (find->next);
+	return (find);
 
 
 
