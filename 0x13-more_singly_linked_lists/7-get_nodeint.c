@@ -16,7 +16,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 
 	find = head;
 
-	for (i = 0; i < index; i++)
+	for (i = 0; i < index && find != NULL; i++)
 	{
 	find = find->next;
 	}
