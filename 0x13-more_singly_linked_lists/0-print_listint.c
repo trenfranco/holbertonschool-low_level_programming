@@ -20,11 +20,7 @@ size_t print_listint(const listint_t *h)
 		printf("%i\n", h->n);
 		h = h->next;
 	}
-	if (h->next == NULL)
-	{
 	printf("%i\n", h->n);
-	count++;
-	}
 	return (count);
 
 
