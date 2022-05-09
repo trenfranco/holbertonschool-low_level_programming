@@ -1,20 +1,22 @@
 #include "main.h"
+
 /**
- * _strcpy - ad
- * @dest: destino
- * @src : frase
- * Return: xd
- */
+ ** _strcpy - copies the string pointed to by src
+ * @dest: char pointer
+ * @src: char pointer
+ * Return: dest
+ **/
+
 char *_strcpy(char *dest, char *src)
 {
-int largo = _strlen(src);
-int b = 0;
-char l;
-*dest = ' ';
-	for (b = 0 ; b <= largo; b++)
+	int i;
+
+	i = 0;
+	while (src[i])
 	{
-		l = *(src + b);
-		*(dest + b) = l;
+		dest[i] = src[i];
+		i++;
 	}
-return (dest);
+	dest[i] = src[i];
+	return (dest);
 }
