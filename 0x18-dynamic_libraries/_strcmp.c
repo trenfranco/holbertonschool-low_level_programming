@@ -1,5 +1,4 @@
 #include "main.h"
-int _strlen(char *s);
 
 /**
  * _strcmp - check the code
@@ -7,6 +6,7 @@ int _strlen(char *s);
  *@s2: str 2
  * Return: Always 0.
  */
+
 int _strcmp(char *s1, char *s2)
 {
 int i = 0;
