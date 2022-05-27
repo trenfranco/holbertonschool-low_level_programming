@@ -14,8 +14,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *new = NULL, *temp = NULL;
 
 	idx = key_index((unsigned char *)keycpy, ht->size);
-        val = strdup(value);
-        temp = ht->array[idx];
+	val = strdup(value);
+	temp = ht->array[idx];
 	keycpy = strdup(key);
 
 	if (!key || !ht || keycpy == "")
@@ -23,11 +23,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	while (temp)
 	{
-	if (temp->key == keycpy)
-	{
-		temp->value = val;
-		return (1);
-	}
+		if (temp->key == keycpy)
+		{
+			temp->value = val;
+			return (1);
+		}
 	temp = temp->next;
 	}
 
