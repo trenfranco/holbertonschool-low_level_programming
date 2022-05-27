@@ -1,32 +1,41 @@
 #include "hash_tables.h"
-
 /**
- * hash_table_create - function that creates a hash table.
- * @size: the size of the array
- * Return: Returns a pointer to the newly created hash table or NULL if fails
+ * hash_table_set - function that adds an element to the hash table.
+ * @ht: the hash table you want to add or update the key/value to
+ * @key: the key. key can not be an empty string
+ * @value: the value associated with the key.
+ * Return: 1 if it succeeded, 0 otherwise.
  */
-hash_table_t *hash_table_create(unsigned long int size)
+int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int i = 0;
-	hash_table_t *a;
 
-	if (size == 0)
-		return (NULL);
+	hash_node_t *a = NULL, *b = NULL;
+	unsigned long int idx;
 
-	a = malloc(sizeof(hash_table_t));
-	if (!a)
-		return (NULL);
+	if (!key || !ht)
+		return (0);
 
-	a->size = size;
-	a->array = malloc(sizeof(hash_node_t *) * size);
-	if (!(a->array))
+	idx = key_index((const unsigned char *)key, ht->size);
+	a = ht->array[idx];
+	/* update key */
+	while (a != NULL)
 	{
-		free(a);
-		return (NULL);
+		if (strcmp(a->key, key) == 0)
+		{
+			free(a->value);
+			a->value = strdup(value);
+			return (1);
+		}
+		a = a->next;
 	}
+	b = malloc(sizeof(hash_node_t));
+	if (!b)
+		return (0);
+	b->key = strdup(key);
+	b->value = strdup(value);
+	b->next = ht->array[idx];
+	ht->array[idx] = b;
 
-	for (; i < size; i++)
-		a->array[i] = NULL;
-
-	return (a);
+	return (1);
 }
+
