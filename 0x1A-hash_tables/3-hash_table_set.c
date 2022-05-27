@@ -10,23 +10,20 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int idx = 0;
-	char *val, *keycpy;
 	hash_node_t *new = NULL, *temp = NULL;
 
 	if (!key || !ht)
 		return (0);
 
-	val = strdup(value);
 	temp = ht->array[idx];
-	keycpy = strdup(key);
-	idx = key_index((const unsigned char *)keycpy, ht->size);
+	idx = key_index((const unsigned char *)key, ht->size);
 
 	while (temp)
 	{
-		if (strcmp(temp->key, keycpy) == 0)
+		if (strcmp(temp->key, key) == 0)
 		{
 			free(temp->value);
-			temp->value = val;
+			temp->value = strdup(value);
 			return (1);
 		}
 		temp = temp->next;
@@ -35,8 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
-	new->key = (char *)keycpy;
-	new->value = val;
+	new->key = strdup(key);
+	new->value = strdup(value);
 	new->next = ht->array[idx];
 	ht->array[idx] = new;
 	return (1);
