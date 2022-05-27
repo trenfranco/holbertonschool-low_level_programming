@@ -13,12 +13,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *val, *keycpy;
 	hash_node_t *new = NULL, *temp = NULL;
 
-	idx = key_index((unsigned char *)keycpy, ht->size);
 	val = strdup(value);
 	temp = ht->array[idx];
 	keycpy = strdup(key);
+	idx = key_index((unsigned char *)keycpy, ht->size);
 
-	if (!key || !ht || keycpy == "")
+	if (!key || !ht)
 		return (0);
 
 	while (temp)
