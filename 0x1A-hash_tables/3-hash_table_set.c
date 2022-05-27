@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	keycpy = strdup(key);
 	idx = key_index((unsigned char *)keycpy, ht->size);
 
-	if (!key || !ht)
+	if (!key || !ht || !value || strlen(key) == 0)
 		return (0);
 
 	while (temp)
