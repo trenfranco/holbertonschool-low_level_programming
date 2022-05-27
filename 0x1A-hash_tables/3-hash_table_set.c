@@ -1,41 +1,32 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - adds an element to the hash table.
- *@ht: hash table
- *@key: key
- *@value: value
- * Return: 1 if it succeeded, 0 otherwise
+ * hash_table_create - function that creates a hash table.
+ * @size: the size of the array
+ * Return: Returns a pointer to the newly created hash table or NULL if fails
  */
-int hash_table_set(hash_table_t *ht, const char *key, const char *value)
+hash_table_t *hash_table_create(unsigned long int size)
 {
-	unsigned long int idx = 0;
-	hash_node_t *new = NULL, *temp = NULL;
+	unsigned long int i = 0;
+	hash_table_t *a;
 
-	if (!key || !ht || strlen(key) == 0)
-		return (0);
+	if (size == 0)
+		return (NULL);
 
-	temp = ht->array[idx];
-	idx = key_index((const unsigned char *)key, ht->size);
+	a = malloc(sizeof(hash_table_t));
+	if (!a)
+		return (NULL);
 
-	while (temp)
+	a->size = size;
+	a->array = malloc(sizeof(hash_node_t *) * size);
+	if (!(a->array))
 	{
-		if (strcmp(temp->key, key) == 0)
-		{
-			free(temp->value);
-			temp->value = strdup(value);
-			return (1);
-		}
-		temp = temp->next;
+		free(a);
+		return (NULL);
 	}
 
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
-		return (0);
-	new->key = strdup(key);
-	new->value = strdup(value);
-	new->next = ht->array[idx];
-	ht->array[idx] = new;
-	return (1);
-}
+	for (; i < size; i++)
+		a->array[i] = NULL;
 
+	return (a);
+}
