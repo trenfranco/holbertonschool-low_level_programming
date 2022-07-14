@@ -1,0 +1,7 @@
+#variables
+CC=gcc
+SRC=*.c
+
+#all build
+all:
+	$(CC) $(SRC) -o school
