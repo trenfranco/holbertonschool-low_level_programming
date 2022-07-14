@@ -1,6 +1,6 @@
 #variables
 CC=gcc
-SRC=*.c
+SRC=main.c school.c
 
 #all build
 all:
