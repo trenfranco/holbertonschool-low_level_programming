@@ -5,7 +5,7 @@ NAME=school
 RM=rm -f
 
 all: $(OBJ)
-	$(CC) $(SRC) -o $(NAME)
+	$(CC) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
@@ -15,4 +15,4 @@ oclean:
 
 fclean: clean oclean
 
-re: flcean all
+re: olcean all
